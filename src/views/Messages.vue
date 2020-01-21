@@ -4,6 +4,17 @@
       <div class="header">新消息</div>
       <div class="inner">
         <span v-if="hasnot_read.length==0">无</span>
+        <div v-for="item in hasnot_read" :key="item.id">
+          <div v-if="item.type == 'reply'">
+            <router-link :to="'/user/' + item.author.loginname" >{{item.author.loginname}}</router-link>
+            回复了你的话题
+            <router-link :to="'/topic/' + item.topic.id">{{item.topic.title}}</router-link>
+          </div>
+          <div v-else>
+            {{item.author.loginname}}在话题{{item.topic.title}}中@了你
+          </div>
+          <Divider/>
+        </div>
       </div>
     </div>
     <div class="panel"> 
