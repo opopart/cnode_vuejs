@@ -19,7 +19,8 @@
             width="35%"
             class="about"
             >
-            <span>作者：柯杰鑫</span>
+            <span>作者：柯杰鑫</span><br>
+            <span>Github: <a href="https://github.com/opopart">https://github.com/opopart</a></span>
             <div>技术栈：
               <ul>
                 <li>Vue</li>
