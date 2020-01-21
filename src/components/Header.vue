@@ -20,7 +20,7 @@
             class="about"
             >
             <span>作者：柯杰鑫</span><br>
-            <span>Github: <a href="https://github.com/opopart">https://github.com/opopart</a></span>
+            <span >Github: <a href="https://github.com/opopart" target="_blank" >https://github.com/opopart</a></span>
             <div>技术栈：
               <ul>
                 <li>Vue</li>
@@ -103,7 +103,7 @@
         margin: 0 20px 0 0;
         
     }
-    a {
+    .info a {
       color: #fff;
       text-decoration: none;
     }
@@ -112,4 +112,6 @@
       margin-top: 5px;
       margin-left: 20px;
     }
+
+    
 </style>
