@@ -7,8 +7,8 @@
       <span class="count" >
         <em>{{item.reply_count}}</em>/<em>{{item.visit_count}}</em>
       </span>
-      <el-tag :type="$tab[item.tab].type">
-        {{ $tab[item.tab].name }}
+      <el-tag :type="$tab[item.tab] && $tab[item.tab].type">
+        {{ $tab[item.tab] && $tab[item.tab].name }}
       </el-tag>
       <span class="title">
         <router-link :to='{path: "/topic/" + item.id}'>
@@ -36,9 +36,7 @@
     },
     props: ['list'],
     methods: {
-      al() {
-        console.log(this.list)
-      }
+      
     }
   }
 

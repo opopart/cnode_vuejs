@@ -36,6 +36,7 @@
         tab: 'all',
         list: [],
         store: {},
+        t: '',
       };
     },
     components: {
@@ -56,16 +57,26 @@
             limit: this.limit,
             data: res.data
           }
-          console.log(res.data);
+          console.log(res.data)
           
         })
+      },
+      throttle(fn, delay) {
+        let lastTime = 0;
+        return function() {
+        let nowTime = new Date();
+          if(nowTime - lastTime > delay) {
+            fn.call(this)
+            lastTime = nowTime
+          } 
+        }
       },
       scroll() {
         const sumH = document.body.scrollHeight || document.documentElement.scrollHeight;
         const viewH = document.documentElement.clientHeight;
         const scrolH = document.body.scrollTop || document.documentElement.scrollTop;
-        if(viewH + scrolH >= sumH) {
-          this.getTopics();
+        if(viewH + scrolH >= sumH - 0.4000244140625) {
+          this.t();
         }
       },
       tabChanged() {
@@ -82,7 +93,7 @@
     },
     created() {
       this.getTopics();
-      
+      this.t = this.throttle(this.getTopics, 2000)
       window.addEventListener('scroll',this.scroll)
     },
     destroyed() {

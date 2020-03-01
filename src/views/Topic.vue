@@ -67,7 +67,7 @@
             ...res.data,
             ...res.data.author
           }
-          console.log(this.topic.loginname,12123)
+          
         })
       }
     },
